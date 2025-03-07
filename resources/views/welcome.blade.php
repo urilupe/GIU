@@ -1,20 +1,23 @@
 @extends('/layout/base')
 @section('contenido')
-    <h1 href= "app">Bienvenido a Nuestra Pagina</h1>
-    <section>
-        <p>Nos alegra que estés aquí. Sabemos que buscar una propiedad puede ser un proceso largo y complicado, pero estamos
-            aquí para hacerlo más fácil. Ya sea que quieras comprar, vender o rentar, tenemos muchas opciones para que
-            encuentres lo que mejor se adapte a tus necesidades.</p>
-        <h1>¿Por qué elegirnos?</h1>
-        <p>Asesoría Personalizada: Te ayudamos en cada paso, asegurándonos de que tomes la mejor decisión.</p>
-        <p>Variedad de Propiedades: Tenemos diferentes opciones de propiedades para que puedas elegir la que más te guste.
-        </p>
-        <p>Compromiso y Confianza: Trabajamos para ofrecerte solo lo mejor y asegurarnos de que el proceso sea claro y
-            transparente.</p>
-        <p>Tecnología al Servicio: Usamos herramientas modernas para que tu experiencia sea rápida y sencilla.</p>
-        <h3>¿Estás listo para encontrar tu nuevo hogar o espacio?</h3>
-        <p>Explora las opciones que tenemos disponibles y si tienes alguna duda, no dudes en contactarnos. ¡Estamos aquí
-            para ayudarte!</p>
+    <!-- Sección del Banner -->
+    <section class="relative w-full h-screen bg-cover bg-center" style="background-image: url('{{ asset('images/home.jpg') }}');">
+        <!-- Capa oscura para mejorar la legibilidad del texto -->
+        <div class="absolute inset-0 bg-black opacity-50"></div>
+
+        <!-- Contenido del banner -->
+        <div class="relative z-10 flex flex-col items-center justify-center h-full text-center text-white px-6">
+            <h1 class="text-5xl md:text-6xl font-bold">¿Estás listo para encontrar tu nuevo hogar?</h1>
+            <p class="mt-4 text-lg md:text-xl max-w-2xl">
+                Explora las opciones que tenemos disponibles y si tienes alguna duda, contáctanos.
+                ¡Estamos aquí para ayudarte!
+            </p>
+
+            <!-- Botón de contacto -->
+            <a href="{{ route('contacto') }}"
+                class="mt-6 px-6 py-3 bg-white text-gray-900 font-semibold text-lg rounded-lg shadow-md hover:bg-gray-200 transition duration-300">
+                Contáctanos
+            </a>
+        </div>
     </section>
-    <button><a href="{{ route('contacto') }}" class="btn btn-primary">Contáctanos</a></button>
 @endsection

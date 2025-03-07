@@ -11,38 +11,32 @@
     <p></p>
 </header>
 <body>
+
+    <nav class="bg-gray-900 mt-6 mx-auto max-w-5xl px-6 py-3 rounded-full shadow-lg">
+        <div class="flex items-center justify-between">
+            <!-- Logo -->
+            <a href="https://flowbite.com" class="flex items-center space-x-3">
+                <img src="../images/logo.jpg" alt="Logo" class="w-14 h-14 object-contain rounded-full">
+                <span class="text-white text-2xl font-semibold">Vívika</span>
+            </a>
     
-<nav class="bg-gray-50 dark:bg-gray-700 pd: 10%">
-    <div class="max-w-screen-xl px-4 py-3 mx-auto ">
-        <div class="flex items-center">
-            <ul class="flex flex-row font-medium mt-0 space-x-8 rtl:space-x-reverse text-sm">
-                <a href="https://flowbite.com" class="flex items-center space-x-3 rtl:space-x-reverse">
-                    <img src="https://flowbite.com/docs/images/logo.svg" class="h-8" alt="Flowbite Logo" />
-                    <span class="self-center text-2xl font-semibold whitespace-nowrap dark:text-white">Flowbite</span>
-                </a>
-                <li><a href="{{ route('bienvenida') }}">Bienvenida</a></li>
-                <li><a href="{{ route('galeria') }}">Galería</a></li>
-                <li><a href="{{ route('quienes-somos') }}">Quiénes Somos</a></li>
-                <li><a href="{{ route('contacto') }}">Contáctanos</a></li>
-                <li><a href="{{ route('venta') }}">Venta</a></li>
-                <li><a href="{{ route('renta') }}">Renta</a></li>
+            <!-- Menú de navegación -->
+            <ul class="flex flex-row space-x-6 text-white text-sm">
+                <li><a href="{{ route('bienvenida') }}" class="hover:underline">Inicio</a></li>
+                <li><a href="{{ route('contacto') }}" class="hover:underline">Contáctanos</a></li>
+                <li><a href="{{ route('quienes-somos') }}" class="hover:underline">Quiénes Somos?</a></li>
+                <li><a href="{{ route('venta') }}" class="hover:underline">Venta</a></li>
+                <li><a href="{{ route('renta') }}" class="hover:underline">Renta</a></li>
             </ul>
-        </div>
-    </div>
-</nav>
-
     
-    <nav>
-        <ul>
+            <!-- Caja de búsqueda -->
+            <div class="relative">
+                <input type="text" class="pl-8 pr-4 py-2 rounded-full bg-gray-200 text-gray-800 focus:outline-none" placeholder="🔍">
+                <span class="absolute left-2 top-1/2 transform -translate-y-1/2 text-gray-600"></span>
+            </div>
+        </div>
+    </nav>    
 
-            
-            
-            
-            
-            <li><a href="{{ route('flowbite') }}">Flowbite</a></li>
-
-        </ul>
-    </nav>
     <main>
         @yield('contenido')
     </main>
@@ -50,7 +44,7 @@
     <footer>
         <p>
             ESTE ES EL PIE DE SITIO
-        </p>
+        </p> 
     </footer>
 </body>
 </html>
