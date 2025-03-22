@@ -40,3 +40,31 @@ Route::get('/venta', function(){
 Route::get('/renta', function(){
     return view('renta');
 })->name('renta');
+
+Route::get('/Casa_Centro', function(){
+    return view('Casa_Centro');
+})->name('Casa_Centro');
+
+Route::get('/Casa_Moderna', function(){
+    return view('Casa_Moderna');
+})->name('Casa_Moderna');
+
+Route::get('/Departamento', function(){
+    return view('Departamento');
+})->name('Departamento');
+
+Route::get('/Casa_Playa', function(){
+    return view('Casa_Playa');
+})->name('Casa_Playa');
+
+Route::get('/Casa_Residencial', function(){
+    return view('Casa_Residencial');
+})->name('Casa_Residencial');
+
+Route::get('/Casa_Jardin', function(){
+    return view('Casa_Jardin');
+})->name('Casa_Jardin');
+
+Route::get('/Preguntas_Frecuentes', function(){
+    return view('Preguntas_Frecuentes');
+})->name('Preguntas_Frecuentes');
