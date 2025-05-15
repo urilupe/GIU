@@ -1,28 +1,41 @@
-FROM laravelsail/php82-composer
+# Etapa 1: Node para compilar Vite
+FROM node:18-alpine as node
+
+WORKDIR /app
+
+COPY package*.json vite.config.js ./
+COPY resources/ resources/
+RUN npm install && npm run build
+
+# Etapa 2: PHP + Laravel
+FROM php:8.2-fpm
 
 # Instalar dependencias del sistema
 RUN apt-get update && apt-get install -y \
-    git unzip zip && \
-    docker-php-ext-install zip pdo pdo_mysql
+    git unzip zip curl libzip-dev && \
+    docker-php-ext-install pdo pdo_mysql zip
+
+# Instalar Composer
+COPY --from=composer:latest /usr/bin/composer /usr/bin/composer
 
 # Directorio de trabajo
 WORKDIR /var/www
 
-# Copiar proyecto
+# Copiar proyecto Laravel
 COPY . .
+
+# Copiar archivos compilados por Vite
+COPY --from=node /app/public/build public/build
 
 # Instalar dependencias PHP
 RUN composer install --no-dev --optimize-autoloader
 
-# Instalar dependencias JS y compilar con Vite
-RUN npm install && npm run build
-
 # Permisos necesarios
-RUN chown -R www-data:www-data /var/www/storage /var/www/bootstrap/cache
-RUN chmod -R 775 /var/www/storage /var/www/bootstrap/cache
+RUN chown -R www-data:www-data storage bootstrap/cache && \
+    chmod -R 775 storage bootstrap/cache
 
-# Exponer puerto Laravel
+# Exponer puerto
 EXPOSE 8000
 
-# Comando de arranque
+# Comando para iniciar Laravel
 CMD ["php", "artisan", "serve", "--host=0.0.0.0", "--port=8000"]
