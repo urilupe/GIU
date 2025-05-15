@@ -17,10 +17,12 @@ COPY . .
 # Instalar dependencias
 RUN composer install --no-dev --optimize-autoloader
 
+# Instalar y compilar assets con Vite
+RUN npm install && npm run build
+
 # Establecer permisos (necesario para Laravel)
 RUN chown -R www-data:www-data /var/www/storage /var/www/bootstrap/cache
 RUN chmod -R 775 /var/www/storage /var/www/bootstrap/cache
-
 
 # Puerto expuesto
 EXPOSE 8000
