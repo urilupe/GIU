@@ -68,3 +68,31 @@ Route::get('/Casa_Jardin', function(){
 Route::get('/Preguntas_Frecuentes', function(){
     return view('Preguntas_Frecuentes');
 })->name('Preguntas_Frecuentes');
+
+Route::get('/Terreno_Venta', function(){
+    return view('Terreno_Venta');
+})->name('Terreno_Venta');
+
+Route::get('/Local_Venta', function(){
+    return view('Local_Venta');
+})->name('Local_Venta');
+
+Route::get('/Bodega_Venta', function(){
+    return view('Bodega_Venta');
+})->name('Bodega_Venta');
+
+Route::get('/Departamento_Renta', function(){
+    return view('Departamento_Renta');
+})->name('Departamento_Renta');
+
+Route::get('/Local_Renta', function(){
+    return view('Local_Renta');
+})->name('Local_Renta');
+
+Route::get('/Terreno_Renta', function(){
+    return view('Terreno_Renta');
+})->name('Terreno_Renta');
+
+Route::get('/Bodega_Renta', function(){
+    return view('Bodega_Renta');
+})->name('Bodega_Renta');

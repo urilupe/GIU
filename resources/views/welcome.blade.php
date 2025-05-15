@@ -8,7 +8,7 @@
         <!-- Contenido del banner -->
         <div class="relative z-10 flex flex-col items-center justify-center h-full text-center text-white px-6">
             <h1 class="text-5xl md:text-6xl font-bold">¿Estás listo para encontrar tu nuevo hogar?</h1>
-            <p class="mt-4 text-lg md:text-xl max-w-2xl">
+            <p class="mt-4 text-2xl md:text-xl max-w-2xl">
                 Explora las opciones que tenemos disponibles y si tienes alguna duda, contáctanos.
                 ¡Estamos aquí para ayudarte!
             </p>

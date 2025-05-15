@@ -6,26 +6,50 @@
     
     <div class="bg-white rounded-lg shadow-md overflow-hidden">
         <!-- Carrusel de imágenes -->
-        <div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel">
-            <div class="carousel-inner">
-                <div class="carousel-item active">
-                    <img src="{{ asset('images/residencial1.jpg') }}" class="d-block w-100 h-96 object-cover" alt="Casa en Renta - Imagen 1">
+        <div id="default-carousel" class="relative w-full" data-carousel="slide">
+            <!-- Carousel wrapper -->
+            <div class="relative h-96 overflow-hidden rounded-lg">
+                <!-- Item 1 -->
+                <div class="hidden duration-700 ease-in-out" data-carousel-item>
+                    <div class="absolute inset-0 flex items-center justify-center">
+                        <img src="{{ asset('images/residencial1.jpg') }}" class="w-full h-full object-cover" alt="Casa con Jardín - Imagen 1">
+                    </div>
                 </div>
-                <div class="carousel-item">
-                    <img src="{{ asset('images/residencial2.jpg') }}" class="d-block w-100 h-96 object-cover" alt="Casa en Renta - Imagen 2">
+                <!-- Item 2 -->
+                <div class="hidden duration-700 ease-in-out" data-carousel-item>
+                    <div class="absolute inset-0 flex items-center justify-center">
+                        <img src="{{ asset('images/residencial2.jpg') }}" class="w-full h-full object-cover" alt="Casa con Jardín - Imagen 2">
+                    </div>
                 </div>
-                <div class="carousel-item">
-                    <img src="{{ asset('images/residencial3.jpg') }}" class="d-block w-100 h-96 object-cover" alt="Casa en Renta - Imagen 3">
+                <!-- Item 3 -->
+                <div class="hidden duration-700 ease-in-out" data-carousel-item>
+                    <div class="absolute inset-0 flex items-center justify-center">
+                        <img src="{{ asset('images/residencial3.jpg') }}" class="w-full h-full object-cover" alt="Casa con Jardín - Imagen 3">
+                    </div>
                 </div>
             </div>
-            <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="prev">
-                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                <span class="visually-hidden">Previous</span>
-            </button>
-            <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="next">
-                <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                <span class="visually-hidden">Next</span>
-            </button>
+            <!-- Slider controls (mantener igual) -->
+           
+
+            <!-- Botón Anterior (Flecha Izquierda) -->
+<button type="button" class="absolute top-0 left-0 z-30 flex items-center justify-center h-full px-4 cursor-pointer group focus:outline-none" data-carousel-prev>
+    <span class="inline-flex items-center justify-center w-10 h-10 rounded-full bg-white/80 group-hover:bg-white/90 group-focus:ring-2 group-focus:ring-black group-focus:outline-none">
+        <svg class="w-6 h-6 text-black" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 6 10">
+            <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 1 1 5l4 4"/>
+        </svg>
+        <span class="sr-only">Previous</span>
+    </span>
+</button>
+
+<!-- Botón Siguiente (Flecha Derecha) -->
+<button type="button" class="absolute top-0 right-0 z-30 flex items-center justify-center h-full px-4 cursor-pointer group focus:outline-none" data-carousel-next>
+    <span class="inline-flex items-center justify-center w-10 h-10 rounded-full bg-white/80 group-hover:bg-white/90 group-focus:ring-2 group-focus:ring-black group-focus:outline-none">
+        <svg class="w-6 h-6 text-black" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 6 10">
+            <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m1 9 4-4-4-4"/>
+        </svg>
+        <span class="sr-only">Next</span>
+    </span>
+</button>
         </div>
 
         <div class="p-8">

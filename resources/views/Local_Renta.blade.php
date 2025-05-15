@@ -2,31 +2,41 @@
 
 @section('contenido')
 <div id="casa-centro" class="property-item casas container mx-auto px-4 py-8">
-    <h1 class="text-3xl font-bold text-gray-800 text-center mb-6">Detalles de la Casa en Venta</h1>
+    <h1 class="text-3xl font-bold text-gray-800 text-center mb-6">Detalles del Local en Renta</h1>
     
-    <div id="default-carousel" class="relative w-full" data-carousel="slide">
+    <div id="default-carousel" class="relative w-full h-[600px]]" data-carousel="slide">
         <!-- Carousel wrapper -->
-        <div class="relative h-96 overflow-hidden rounded-lg">
-            <!-- Item 1 -->
-            <div class="hidden duration-700 ease-in-out" data-carousel-item>
-                <div class="absolute inset-0 flex items-center justify-center">
-                    <img src="{{ asset('images/centro1.jpg') }}" class="w-full h-full object-cover" alt="Casa con Jardín - Imagen 1">
+        <div id="default-carousel" class="relative w-full bg-gray-100" data-carousel="slide">
+            <!-- Contenedor principal (ajusta la altura según necesites) -->
+            <div class="relative h-96 overflow-hidden">
+                <!-- Ítems del carrusel -->
+                <div class="hidden duration-700 ease-in-out" data-carousel-item>
+                    <div class="flex items-center justify-center w-full h-full">
+                        <img 
+                            src="{{ asset('images/LocalRenta1.jpg') }}" 
+                            class="max-w-full max-h-full object-contain" 
+                            alt="Imagen 1"
+                        >
+                    </div>
                 </div>
-            </div>
-            <!-- Item 2 -->
-            <div class="hidden duration-700 ease-in-out" data-carousel-item>
-                <div class="absolute inset-0 flex items-center justify-center">
-                    <img src="{{ asset('images/centro2.jpg') }}" class="w-full h-full object-cover" alt="Casa con Jardín - Imagen 2">
+                <div class="hidden duration-700 ease-in-out" data-carousel-item>
+                    <div class="flex items-center justify-center w-full h-full">
+                        <img 
+                            src="{{ asset('images/LocalRenta2.jpg') }}" 
+                            class="max-w-full max-h-full object-contain" 
+                            alt="Imagen 2"
+                        >
+                    </div>
                 </div>
-            </div>
-            <!-- Item 3 -->
-            <div class="hidden duration-700 ease-in-out" data-carousel-item>
-                <div class="absolute inset-0 flex items-center justify-center">
-                    <img src="{{ asset('images/centro3.jpg') }}" class="w-full h-full object-cover" alt="Casa con Jardín - Imagen 3">
+                <div class="hidden duration-700 ease-in-out" data-carousel-item>
+                    <div class="flex items-center justify-center w-full h-full">
+                        <img 
+                            src="{{ asset('images/LocalRenta3.jpg') }}" 
+                            class="max-w-full max-h-full object-contain" 
+                            alt="Imagen 3"
+                        > 
+                    </div>
                 </div>
-            </div>
-        </div>
-        <!-- Slider controls (mantener igual) -->
        
 
         <!-- Botón Anterior (Flecha Izquierda) -->
@@ -51,25 +61,25 @@
     </div>
 
         <div class="p-8">
-            <h2 class="text-2xl font-semibold text-gray-800">Casa en el Centro</h2>
-            <p class="text-gray-600">Ubicación: Tepic, Nayarit</p>
-            <p class="text-gray-600">2 recámaras, 1 baño, 90 m²</p>
-            <p class="text-gray-900 font-bold text-xl">Precio: $2,000,000 MXN / mes</p>
+            <h2 class="text-2xl font-semibold text-gray-800">Local en Renta</h2>
+            <p class="text-gray-600">Andares: Zapopan, Jalisco</p>
+            <p class="text-gray-900 font-bold text-xl">Precio: $50,000 MXN / mes</p>
 
             <div class="mt-6">
                 <h3 class="text-xl font-semibold text-gray-800">Descripción:</h3>
                 <p class="text-gray-600 mt-2">
-                    Esta hermosa casa está ubicada en el centro de la ciudad, ideal para acceder facilmente a tiendas y recursos. Con dos recámaras, un baño completo, y un hermoso jardín, es el lugar perfecto para descansar.
+                    Se vende excelente local comercial ubicado dentro de una reconocida plaza comercial con alto flujo de clientes diarios. Ideal para negocios como boutique, cafetería, consultorio, oficina o franquicia.
                 </p>
             </div>
 
             <div class="mt-6">
                 <h3 class="text-xl font-semibold text-gray-800">Características:</h3>
                 <ul class="list-disc pl-6 mt-2">
-                    <li>Aire acondicionado</li>
-                    <li>Alberca privada</li>
-                    <li>Cerca de tiendas y restaurantes</li>
-                    <li>Estacionamiento para 2 autos</li>
+                    <li>Tamaño: 20 m2</li>
+                    <li>1 baño</li>
+                    <li>Luz electrica</li>
+                    <li>Zona principal</li>
+                    <li>Servicio de Agua</li>
                 </ul>
             </div>
 
