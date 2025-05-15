@@ -96,3 +96,11 @@ Route::get('/Terreno_Renta', function(){
 Route::get('/Bodega_Renta', function(){
     return view('Bodega_Renta');
 })->name('Bodega_Renta');
+
+Route::get('/clear', function () {
+    Artisan::call('config:clear');
+    Artisan::call('route:clear');
+    Artisan::call('view:clear');
+    Artisan::call('cache:clear');
+    return 'Cache cleared';
+});
