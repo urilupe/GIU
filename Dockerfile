@@ -29,6 +29,7 @@ COPY --from=node /app/public/build public/build
 
 # Instalar dependencias PHP
 RUN composer install --no-dev --optimize-autoloader
+RUN apt-get update && apt-get install -y nodejs npm
 
 # Permisos necesarios
 RUN chown -R www-data:www-data storage bootstrap/cache && \
