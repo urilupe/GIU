@@ -1,31 +1,28 @@
-FROM php:8.2-fpm
+FROM laravelsail/php82-composer
 
-# Instalar extensiones necesarias
+# Instalar dependencias del sistema
 RUN apt-get update && apt-get install -y \
-    git unzip curl libzip-dev zip && \
+    git unzip zip && \
     docker-php-ext-install zip pdo pdo_mysql
 
-# Instalar Composer
-COPY --from=composer:latest /usr/bin/composer /usr/bin/composer
-
-# Establecer directorio de trabajo
+# Directorio de trabajo
 WORKDIR /var/www
 
-# Copiar los archivos del proyecto
+# Copiar proyecto
 COPY . .
 
-# Instalar dependencias
+# Instalar dependencias PHP
 RUN composer install --no-dev --optimize-autoloader
 
-# Instalar y compilar assets con Vite
+# Instalar dependencias JS y compilar con Vite
 RUN npm install && npm run build
 
-# Establecer permisos (necesario para Laravel)
+# Permisos necesarios
 RUN chown -R www-data:www-data /var/www/storage /var/www/bootstrap/cache
 RUN chmod -R 775 /var/www/storage /var/www/bootstrap/cache
 
-# Puerto expuesto
+# Exponer puerto Laravel
 EXPOSE 8000
 
-# Comando para iniciar Laravel con servidor embebido
-CMD ["php", "artisan", "serve", "--host=0.0.0.0", "--port=8000"]
+# Comando de arranque
+CMD ["php", "artisan", "serve", "--host=0.0.0.0", "--port=8000"]
